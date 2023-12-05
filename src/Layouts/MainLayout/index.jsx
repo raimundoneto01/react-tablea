@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../../components/Header/header";
-import { SaideBar } from "../../components/SaideBar/SaideBar";
+import { Header } from "../../components/Layouts/main/Header/Header";
+import { SaideBar } from "../../components/Layouts/main/SaideBar/SaideBar";
 
 export function MainLayout(){
     return(

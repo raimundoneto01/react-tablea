@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "../Layouts/MainLayout";
 import Hooks from "../pages/Hooks";
+import Users from "../pages/Users";
 
 
 
@@ -14,6 +15,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/',
                 element: <Hooks/>,
+            },  
+            {
+                path:'/usuarios',
+                element: <Users/>,
             },  
             {
                 path:'/clientes',

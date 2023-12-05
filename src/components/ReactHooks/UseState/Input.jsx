@@ -45,8 +45,14 @@ const [user, setUser ] = useState({
     cidade: '',  
 })
 
+
 const meuChange=({target})=>{
     setUser({...user, [target.id]: target.value})
+}
+
+const meuEnvio=()=>{
+  
+    console.log(user);
 }
 //   const handle = ({ target }) => {
 //     const { id, value } = target;
@@ -58,17 +64,18 @@ const meuChange=({target})=>{
 //     console.log(form);
 //   };
   return (
-    <>
+    <form onSubmit={(event)=>event.preventDefault()}>
       <h2>linadando com react e usestatte</h2>
       <div className="felx flex-col  mt-3">
         <input 
-        className="flex flex-col px-2 my-2 gap-3 border border-black"
+        className="flex flex-col px-2 my-2 gap-3 border border-black "
         type="text" value={user.nome} id="nome" name="nome" placeholder="nome:" onChange={meuChange}/>
 
         <input 
         className="flex flex-col px-2 my-2 gap-3 border border-black"
         type="text" value={user.lastNome} id="lastNome" name="lastName" placeholder="SobreNome:" onChange={meuChange} />
       </div>
+      
         <input 
         className="flex flex-col px-2 my-2 gap-3 border border-black"
         type="email" value={user.email} id="email" name="email" placeholder="E-mail:" onChange={meuChange} />
@@ -79,6 +86,8 @@ const meuChange=({target})=>{
         <input
          className="flex flex-col px-2 my-2 gap-3 border border-black" 
         type="text" value={user.cidade} id="cidade" name="cidade" placeholder="Cidade:" onChange={meuChange} />
+
+        <button onClick={meuEnvio}>Enviar</button>
 
       {/* <form className="flex flex-col gap-2" onSubmit={meuSubmite}>
         {formFields.map(({ id, label, type }) => (
@@ -99,6 +108,6 @@ const meuChange=({target})=>{
         </button>
       </form> */}
       
-    </>
+    </form>
   );
 }

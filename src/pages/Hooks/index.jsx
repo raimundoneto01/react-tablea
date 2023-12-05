@@ -1,6 +1,7 @@
 
 import React, { useState } from "react"; 
 import { Input } from "../../components/ReactHooks/UseState/Input";
+import UserEffect from "../../components/ReactHooks/UserEfferct";
 export default function Hooks(){
 
 
@@ -31,7 +32,7 @@ export default function Hooks(){
     }
     return(
         <>
-            <div>
+            {/* <div>
                 <h2>useState</h2>
 
                 <div className="flex gap-2">
@@ -53,7 +54,8 @@ export default function Hooks(){
                 </div>
                 
             </div>
-            <Input/>
+            <Input/> */}
+            <UserEffect/>
         </>
     );
 }

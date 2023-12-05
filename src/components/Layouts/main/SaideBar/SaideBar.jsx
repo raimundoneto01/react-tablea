@@ -5,7 +5,10 @@ export function SaideBar(){
         <div className=" w-2/12 bg-white">
             <ul className="flex flex-col gap-2 px-2">
                 <li>
-                    <Link to='/'>Home</Link>
+                    <Link to='/'> Home </Link>
+                </li>
+                <li>
+                    <Link to='/usuarios'> Usuários</Link>
                 </li>
                 <li>
                     <Link to='/produtos'> Produtos</Link>
