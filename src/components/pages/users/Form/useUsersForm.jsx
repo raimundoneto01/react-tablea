@@ -1,12 +1,13 @@
 import axios from 'axios'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useUsersForm(){
     const [ users, setUsers ] = useState({
-        nome: '',
-        sobrenome:'',
+        name: '',
+        lastName:'',
     })
- const [message, setMessage ] = useState(null)
+ const [message, setMessage ] = useState(null);
+ 
 
  async function createUser(){
     const response = await axios.post('https://656e487ebcc5618d3c24bf2a.mockapi.io/api/users', users)
@@ -14,12 +15,19 @@ export function useUsersForm(){
     console.log(response);
 }
 
+
+
 function handleSubmit(event){
     event.preventDefault()
     createUser()
+    
+    setTimeout(()=>{
+        setMessage(users)
+    }, 2000)
    
 
 }
+
 
 function handleUser(e){
     setUsers((prev)=>(
@@ -31,5 +39,5 @@ function handleUser(e){
 }
 
 
-    return{ users, handleUser, handleSubmit, message}
+    return{ users, handleUser, handleSubmit,  message}
 }
